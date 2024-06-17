@@ -1,0 +1,125 @@
+:root {
+  --w: 720px;
+  --h: 200px;
+  --p: 10px; /* Padding */
+  --bw: 2px; /* Border width */
+  --br: linear-gradient(to right, #fff, #fff); /* Right border color */
+  --bb: linear-gradient(to right, #fff, #fff); /* Bottom border color */
+  --bl: linear-gradient(to right, #fff, #fff); /* Left border color */
+  --bt: linear-gradient(to right, #fff, #fff); /* Top border color */
+  --td: 0.5s; /* Transition duration */
+  --te: ease; /* Transition timing function */
+}
+
+.banner {
+  max-width: var(--w);
+  width: 100%;
+  margin: auto;
+  height: var(--h);
+  background-image: var(--img);
+  background-size: var(--w);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-size var(--td);
+  position: relative;
+  box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.45);
+}
+
+.inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.inner h1 {
+  position: relative;
+  font-family: serif;
+  color: white;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  font-size: 1em;
+  transition: var(--td);
+}
+
+@media (min-width: 480px) {
+  .inner h1 {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 768px) {
+  .inner h1 {
+    font-size: 3em;
+  }
+}
+
+.inner::before,
+.inner::after,
+.banner::after,
+.banner::before {
+  content: "";
+  position: absolute;
+}
+
+.banner::before {
+  top: var(--p);
+  right: var(--p);
+  height: 0;
+  width: var(--bw);
+  background-image: var(--br);
+  transition: height var(--td) var(--te) 0.75s;
+}
+
+.banner::after {
+  bottom: var(--p);
+  right: var(--p);
+  width: 0;
+  height: var(--bw);
+  background-image: var(--bb);
+  transition: width var(--td) var(--te) 0.5s;
+}
+
+.inner::before {
+  bottom: var(--p);
+  left: var(--p);
+  height: 0;
+  width: var(--bw);
+  background-image: var(--bl);
+  transition: height var(--td) var(--te) 0.25s;
+}
+
+.inner::after {
+  top: var(--p);
+  left: var(--p);
+  height: var(--bw);
+  width: 0;
+  background-image: var(--bt);
+  transition: width var(--td) var(--te) 0s;
+}
+
+.banner:hover::before {
+  height: calc(var(--h) - var(--p) * 2);
+  transition: height var(--td) var(--te) 0s;
+}
+
+.banner:hover::after {
+  width: calc(100% - var(--p) * 2);
+  transition: width var(--td) var (--te) 0.25s;
+}
+
+.banner:hover .inner::before {
+  height: calc(var(--h) - var(--p) * 2);
+  transition: height var(--td) var(--te) 0.5s;
+}
+
+.banner:hover .inner::after {
+  width: calc(100% - var(--p) * 2);
+  transition: width var(--td) var(--te) 0.75s;
+}
+
+@media (min-width: 768px) {
+  .banner:hover {
+    background-size: 760px;
+  }
+}
