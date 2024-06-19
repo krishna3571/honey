@@ -1079,8 +1079,8 @@ export default function Home() {
                   sustainability and fair trade practices ensures the delivery
                   of top-quality crops, spices, and organic produce.
                 </p>
-                {/* <ul className="list-unstyled d-flex">
-                  <li>
+                 <ul className="list-unstyled d-flex">
+                  {/* <li>
                     <a
                       href="https://twitter.com/Antarcticoint/"
                       target="_blank"
@@ -1097,22 +1097,22 @@ export default function Home() {
                     >
                       <i className="fab fa-facebook px-2"></i>
                     </a>
-                  </li>
+                  </li> */}
                   <li>
                     <a
-                      href="https://www.instagram.com/antarctico_international/"
+                      href="https://www.instagram.com/honey__international/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <i className="fab fa-instagram px-2"></i>
                     </a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a href="#" target="_blank" rel="noopener noreferrer">
                       <i className="fab fa-linkedin-in px-2"></i>
                     </a>
-                  </li>
-                </ul> */}
+                  </li> */} 
+                </ul> 
               </div>
               <div className="col-12 col-md-6 col-lg-4">
                 <div
